@@ -1,0 +1,151 @@
+.footer {
+  margin-top: 80px;
+  padding: 0;
+  color: #f8fafc;
+  background:
+    linear-gradient(180deg, rgba(2, 8, 23, 0.74) 0%, rgba(2, 8, 23, 0.92) 100%),
+    url("https://framerusercontent.com/images/lMLG6MAvI6V6XNIku3X2llo.png?width=1728&height=839");
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  width: min(1160px, 92vw);
+  margin: 0 auto;
+  padding: 92px 0 24px;
+}
+
+.ctaPanel {
+  width: min(520px, 100%);
+  padding: 8px 0 94px;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.ctaPanel h2 {
+  margin: 14px 0 0;
+  font-size: clamp(44px, 5vw, 70px);
+  line-height: 0.96;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  margin: 20px 0 0;
+  max-width: 500px;
+  font-size: 18px;
+  line-height: 1.45;
+  color: rgba(226, 232, 240, 0.93);
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.primaryAction,
+.secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.primaryAction {
+  background: #ffffff;
+  color: #020617;
+}
+
+.secondaryAction {
+  background: rgba(15, 23, 42, 0.5);
+  color: #f8fafc;
+  border-color: rgba(248, 250, 252, 0.38);
+}
+
+.primaryAction:hover,
+.secondaryAction:hover {
+  border-color: #ffffff;
+}
+
+.bottomBar {
+  border-top: 1px solid rgba(248, 250, 252, 0.14);
+  padding-top: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.linkGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.groupTitle {
+  margin: 0;
+  width: 64px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(226, 232, 240, 0.92);
+}
+
+.linkRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.linkRow a {
+  text-decoration: none;
+  color: rgba(248, 250, 252, 0.92);
+  font-size: 13px;
+}
+
+.meta {
+  margin-top: 4px;
+}
+
+.copy,
+.address {
+  margin: 0;
+  color: rgba(203, 213, 225, 0.9);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.address {
+  margin-top: 4px;
+}
+
+@media (max-width: 940px) {
+  .container {
+    padding: 64px 0 22px;
+  }
+
+  .ctaPanel {
+    padding-bottom: 64px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+  }
+
+  .groupTitle {
+    width: auto;
+  }
+}

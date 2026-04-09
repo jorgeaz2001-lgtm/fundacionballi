@@ -1,0 +1,14 @@
+.section {
+  padding: 66px 0 4px;
+}
+
+.container {
+  width: min(1160px, 92vw);
+  margin: 0 auto;
+}
+
+.section h1 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: clamp(36px, 5vw, 58px);
+}

@@ -1,0 +1,44 @@
+.section {
+  padding: 38px 0;
+}
+
+.container {
+  width: min(1160px, 92vw);
+  margin: 0 auto;
+}
+
+.section h2 {
+  margin: 0 0 18px;
+  color: var(--color-primary);
+  font-size: clamp(30px, 4vw, 46px);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.trigger {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 16px 18px;
+  color: var(--color-primary);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.answer {
+  margin: 0;
+  padding: 0 18px 18px;
+  color: var(--color-muted);
+  line-height: 1.5;
+}

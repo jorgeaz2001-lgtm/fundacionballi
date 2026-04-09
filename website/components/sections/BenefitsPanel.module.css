@@ -1,0 +1,45 @@
+.section {
+  padding: 40px 0;
+}
+
+.container {
+  width: min(1160px, 92vw);
+  margin: 0 auto;
+  display: grid;
+  gap: 28px;
+  align-items: center;
+  grid-template-columns: 1.05fr 1fr;
+}
+
+.imageWrap {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.imageWrap img {
+  width: 100%;
+  height: auto;
+}
+
+.copy h2 {
+  margin: 0 0 16px;
+  color: var(--color-primary);
+  font-size: clamp(30px, 4vw, 44px);
+}
+
+.copy ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.copy li {
+  margin-bottom: 12px;
+  color: var(--color-muted);
+  line-height: 1.45;
+}
+
+@media (max-width: 940px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}

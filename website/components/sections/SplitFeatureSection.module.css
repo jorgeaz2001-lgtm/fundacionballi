@@ -1,0 +1,143 @@
+.section {
+  padding: 64px 0 72px;
+  background: linear-gradient(180deg, #f4f8ff 0%, #eef6ff 100%);
+}
+
+.container {
+  width: min(1160px, 92vw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  justify-content: center;
+  align-items: center;
+}
+
+.copy {
+  width: 800px;
+  text-align: center;
+}
+
+.copy h2 {
+  margin: 0;
+  width: 800px;
+  color: var(--color-primary);
+  font-size: clamp(42px, 4.4vw, 60px);
+  line-height: 1.04;
+}
+
+.copy p {
+  margin: 16px auto 0;
+  width: 800px;
+  color: #1f2937;
+  font-size: 18px;
+  line-height: 1.52;
+}
+
+.list {
+  width: 100%;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.card {
+  grid-column: span 2;
+  border-radius: 16px;
+  background: #0f172a;
+  border: 1px solid rgba(219, 231, 255, 0.35);
+  overflow: hidden;
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:nth-child(n + 4) {
+  grid-column: span 3;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 34px rgba(15, 23, 42, 0.12);
+}
+
+.cardMedia {
+  position: relative;
+  aspect-ratio: 1.62 / 1;
+}
+
+.cardMedia img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.cardMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.14) 0%, rgba(15, 23, 42, 0.4) 100%);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-start;
+  padding: 14px 14px 16px;
+}
+
+.cardIndex {
+  margin: 0;
+  color: #7dd3fc;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-shadow: 0 1px 8px rgba(15, 23, 42, 0.45);
+}
+
+.cardOverlay h3 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: clamp(20px, 1.9vw, 34px);
+  line-height: 1.06;
+  text-shadow: 0 1px 10px rgba(15, 23, 42, 0.5);
+}
+
+.cardOverlay p {
+  margin: 0;
+  color: rgba(241, 245, 249, 0.95);
+  font-size: 15px;
+  line-height: 1.35;
+  max-width: 28ch;
+  text-shadow: 0 1px 10px rgba(15, 23, 42, 0.5);
+}
+
+@media (max-width: 940px) {
+  .container {
+    gap: 22px;
+  }
+
+  .copy,
+  .copy h2,
+  .copy p {
+    width: 100%;
+  }
+
+  .list {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .card:nth-child(n + 4) {
+    grid-column: span 1;
+  }
+
+  .cardMedia {
+    aspect-ratio: 16 / 10;
+  }
+}

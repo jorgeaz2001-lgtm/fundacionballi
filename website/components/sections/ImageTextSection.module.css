@@ -1,0 +1,73 @@
+.section {
+  padding: 48px 0;
+}
+
+.container {
+  width: min(1160px, 92vw);
+  margin: 0 auto;
+  display: grid;
+  align-items: center;
+  gap: 30px;
+  grid-template-columns: 1.05fr 1fr;
+}
+
+.reverse {
+  grid-template-columns: 1fr 1.05fr;
+}
+
+.reverse .media {
+  order: 2;
+}
+
+.reverse .copy {
+  order: 1;
+}
+
+.media {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.copy h2 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.13;
+}
+
+.copy p {
+  margin: 18px 0 28px;
+  color: var(--color-muted);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.copy ol {
+  margin: -8px 0 28px 22px;
+  padding: 0;
+  color: var(--color-muted);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.copy li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 940px) {
+  .container,
+  .reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .reverse .media,
+  .reverse .copy {
+    order: initial;
+  }
+}
