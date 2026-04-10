@@ -4,40 +4,75 @@
   background: #ffffff;
 }
 
-.container {
+.wrapper {
   width: min(900px, 94vw);
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-/* Sección de Donación */
+/* Sección de Donación - Mismo estilo que ContactForm */
 .donateSection {
-  text-align: center;
-  padding: 60px 40px;
-  border-bottom: 1px solid var(--color-border);
+  padding: 44px 0 28px;
 }
 
-.donateTitle {
-  font-size: clamp(28px, 4vw, 40px);
-  color: var(--color-primary);
-  margin: 0 0 12px;
-  font-weight: 600;
+.donateContainer {
+  width: min(1280px, 96vw);
+  margin: 0 auto;
+  border: 1px solid #e6e8ec;
+  border-radius: 20px;
+  padding: 44px 34px;
+  display: grid;
+  gap: 38px;
+  align-items: start;
+  grid-template-columns: minmax(320px, 1fr) minmax(460px, 1.2fr);
+  background: #ffffff;
 }
 
-.donateSubtitle {
-  font-size: 16px;
-  color: var(--color-muted);
-  margin: 0 0 40px;
-  max-width: 450px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.5;
+.side h1 {
+  margin: 0;
+  color: #111827;
+  font-size: clamp(34px, 3.4vw, 56px);
+  line-height: 1.08;
+}
+
+.side ul {
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.side li {
+  margin-bottom: 12px;
+  color: #111827;
+  font-size: clamp(18px, 1.85vw, 28px);
+  line-height: 1.25;
+  position: relative;
+  padding-left: 30px;
+}
+
+.side li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 18px;
+  color: #7cb3e1;
+  font-weight: 700;
+}
+
+.supportCopy {
+  margin: 26px 0 0;
+  color: #949aa5;
+  font-size: 18px;
+  line-height: 1.45;
+  max-width: 360px;
 }
 
 .bankInfo {
   display: grid;
-  gap: 16px;
-  max-width: 500px;
-  margin: 0 auto;
+  gap: 18px;
 }
 
 .bankRow {
@@ -53,48 +88,42 @@
 }
 
 .bankLabel {
-  font-size: 14px;
-  color: var(--color-muted);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: 15px;
+  color: #6b7280;
+  font-weight: 600;
 }
 
 .bankValue {
   font-size: 16px;
-  color: var(--color-text);
+  color: #111827;
   font-weight: 600;
-  text-align: right;
-  font-family: var(--font-sans);
-  letter-spacing: 0.5px;
+  font-family: inherit;
+  letter-spacing: 0.3px;
 }
 
 /* Sección del formulario */
 .formSection {
-  padding-top: 40px;
+  padding: 44px 0 28px;
 }
 
 /* Responsive */
-@media (max-width: 640px) {
+@media (max-width: 980px) {
   .main {
     padding: 90px 0 40px;
   }
 
-  .donateSection {
-    padding: 40px 20px;
+  .donateContainer {
+    grid-template-columns: 1fr;
+    padding: 26px 20px;
+    gap: 28px;
   }
 
-  .donateTitle {
-    font-size: 26px;
+  .side h1 {
+    font-size: 32px;
   }
 
-  .donateSubtitle {
-    font-size: 15px;
-    margin-bottom: 32px;
-  }
-
-  .bankInfo {
-    gap: 0;
+  .side li {
+    font-size: 20px;
   }
 
   .bankRow {
@@ -105,23 +134,31 @@
   }
 
   .bankLabel {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .bankValue {
     font-size: 15px;
-    text-align: left;
   }
 }
 
 /* Small mobile */
 @media (max-width: 380px) {
-  .donateSection {
-    padding: 32px 16px;
+  .donateContainer {
+    padding: 22px 16px;
   }
 
-  .donateTitle {
-    font-size: 24px;
+  .side h1 {
+    font-size: 28px;
+  }
+
+  .side li {
+    font-size: 18px;
+    padding-left: 26px;
+  }
+
+  .supportCopy {
+    font-size: 16px;
   }
 
   .bankValue {
