@@ -32,53 +32,42 @@ type ContactFormProps = {
 
 export function ContactForm({ panel, labels }: ContactFormProps) {
   const [sent, setSent] = useState(false);
-  const [sending, setSending] = useState(false);
-  const [error, setError] = useState("");
-
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSending(true);
-    setError("");
-
+    
     const form = event.currentTarget;
     const formData = new FormData(form);
     
-    // Convertir FormData a objeto
-    const data: Record<string, string> = {};
-    formData.forEach((value, key) => {
-      data[key] = value.toString();
-    });
-
-    try {
-      // =====================================================
-      // CONFIGURACIÓN: Reemplaza con tu endpoint de Formspree
-      // 1. Ve a https://formspree.io/
-      // 2. Crea una cuenta y un nuevo formulario
-      // 3. Copia tu endpoint (ej: https://formspree.io/f/xnqkvnyp)
-      // 4. Reemplaza la URL de abajo
-      // =====================================================
-      const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnqkvnyp"; // <-- REEMPLAZA ESTO
-      
-      const response = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        setSent(true);
-        form.reset();
-      } else {
-        setError("Hubo un error al enviar el mensaje. Por favor intenta de nuevo.");
-      }
-    } catch (err) {
-      setError("Error de conexión. Por favor verifica tu conexión a internet.");
-    } finally {
-      setSending(false);
-    }
+    // Get form values
+    const firstName = formData.get("firstName") as string;
+    const lastName = formData.get("lastName") as string;
+    const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const asunto = formData.get("asunto") as string;
+    const tipoConsulta = formData.get("tipoConsulta") as string;
+    const comoNosConociste = formData.get("comoNosConociste") as string;
+    
+    // Build email body
+    const subject = encodeURIComponent(`Nuevo mensaje: ${asunto || 'Contacto desde web'}`);
+    const body = encodeURIComponent(
+      `Nombre: ${firstName} ${lastName}\n` +
+      `Email: ${email}\n` +
+      `Teléfono: ${phone}\n` +
+      `Asunto: ${asunto}\n` +
+      `Tipo de consulta: ${tipoConsulta}\n` +
+      `¿Cómo nos conoció?: ${comoNosConociste}\n\n` +
+      `---\nMensaje enviado desde fundacionvaldezballi.org`
+    );
+    
+    // Open email client
+    window.location.href = `mailto:contacto@fundacionvaldezballi.org?subject=${subject}&body=${body}`;
+    
+    setSent(true);
+    form.reset();
+    
+    // Reset success message after 5 seconds
+    setTimeout(() => setSent(false), 5000);
   };
 
   return (
@@ -151,23 +140,13 @@ export function ContactForm({ panel, labels }: ContactFormProps) {
             </select>
           </label>
 
-          <button 
-            type="submit" 
-            className={styles.submitButton}
-            disabled={sending}
-          >
-            {sending ? "Enviando..." : labels.submitLabel}
+          <button type="submit" className={styles.submitButton}>
+            {labels.submitLabel}
           </button>
           
           {sent && (
             <p className={styles.success}>
-              ✅ Mensaje enviado correctamente. Te contactaremos en breve.
-            </p>
-          )}
-          
-          {error && (
-            <p className={styles.error}>
-              ❌ {error}
+              ✅ Se abrirá tu app de correo. Si no tienes una configurada, envía un email a contacto@fundacionvaldezballi.org
             </p>
           )}
         </form>
