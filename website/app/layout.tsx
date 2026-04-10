@@ -7,7 +7,12 @@ import "@/app/globals.css";
 export const metadata: Metadata = {
   title: "Fundación Valdez Balli | Salud Visual para Todos",
   description:
-    "Trabajamos en la zona metropolitana de Monterrey para ayudar a las comunidades vulnerables a acceder a atención oftalmológica de calidad. Reducimos la ceguera evitable y mejoramos la calidad de vida."
+    "Trabajamos en la zona metropolitana de Monterrey para ayudar a las comunidades vulnerables a acceder a atención oftalmológica de calidad. Reducimos la ceguera evitable y mejoramos la calidad de vida.",
+  icons: {
+    icon: "/images/icono.png",
+    shortcut: "/images/icono.png",
+    apple: "/images/icono.png"
+  }
 };
 
 export default function RootLayout({
