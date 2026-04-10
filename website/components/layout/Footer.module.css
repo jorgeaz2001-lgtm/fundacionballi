@@ -52,41 +52,6 @@
   flex-wrap: wrap;
 }
 
-.bankInfo {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
-  padding: 24px 28px;
-  margin-bottom: 50px;
-  max-width: 520px;
-}
-
-.bankTitle {
-  margin: 0 0 16px;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
-.bankDetails {
-  display: grid;
-  gap: 8px;
-}
-
-.bankDetails p {
-  margin: 0;
-  font-size: 15px;
-  color: rgba(248, 250, 252, 0.95);
-  line-height: 1.5;
-}
-
-.bankDetails strong {
-  color: #ffffff;
-  font-weight: 600;
-}
-
 .primaryAction,
 .secondaryAction {
   display: inline-flex;
@@ -234,15 +199,7 @@
   .meta {
     text-align: center;
   }
-
-  .bankInfo {
-    padding: 20px 22px;
-    margin-bottom: 40px;
-  }
-
-  .bankDetails p {
-    font-size: 14px;
-  }
+}
 
 /* Small mobile adjustments */
 @media (max-width: 380px) {

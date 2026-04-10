@@ -1,3 +1,13 @@
+export const siteConfig = {
+  whatsapp: "+528112345678",
+  bankInfo: {
+    bank: "BBVA",
+    accountName: "FUNDACION VALDEZ BALLI AC",
+    accountNumber: "0124630084",
+    clabe: "012580001246300848"
+  }
+};
+
 export const contactContent = {
   hero: {
     title: "Contacto",
