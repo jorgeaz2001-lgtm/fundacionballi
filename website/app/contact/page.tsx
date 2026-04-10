@@ -1,5 +1,5 @@
 import { ContactForm } from "@/components/sections/ContactForm";
-import { siteConfig, contactContent } from "@/content/contact";
+import { contactContent } from "@/content/contact";
 import styles from "./page.module.css";
 
 export default function ContactPage() {
@@ -12,29 +12,23 @@ export default function ContactPage() {
           <p className={styles.donateSubtitle}>
             Tu apoyo nos permite llevar atención oftalmológica a quienes más lo necesitan
           </p>
-          <div className={styles.bankCard}>
-            <p className={styles.bankName}>🏦 {siteConfig.bankInfo.bank}</p>
-            <div className={styles.bankDetails}>
-              <p><strong>Cuenta:</strong> {siteConfig.bankInfo.accountNumber}</p>
-              <p><strong>CLABE:</strong> {siteConfig.bankInfo.clabe}</p>
-              <p><strong>Nombre:</strong> {siteConfig.bankInfo.accountName}</p>
+          <div className={styles.bankInfo}>
+            <div className={styles.bankRow}>
+              <span className={styles.bankLabel}>Banco</span>
+              <span className={styles.bankValue}>BBVA</span>
             </div>
-          </div>
-          <div className={styles.contactButtons}>
-            <a 
-              href={`https://wa.me/${siteConfig.whatsapp.replace(/\+/g, '')}`} 
-              className={styles.whatsappButton}
-              target="_blank"
-              rel="noreferrer"
-            >
-              💬 Contactar por WhatsApp
-            </a>
-            <a 
-              href={`mailto:${contactContent.contactInfo.email}`}
-              className={styles.emailButton}
-            >
-              ✉️ Enviar correo
-            </a>
+            <div className={styles.bankRow}>
+              <span className={styles.bankLabel}>Cuenta</span>
+              <span className={styles.bankValue}>0124 6300 84</span>
+            </div>
+            <div className={styles.bankRow}>
+              <span className={styles.bankLabel}>CLABE</span>
+              <span className={styles.bankValue}>012 580 0012 4630 0848</span>
+            </div>
+            <div className={styles.bankRow}>
+              <span className={styles.bankLabel}>Nombre</span>
+              <span className={styles.bankValue}>FUNDACION VALDEZ BALLI AC</span>
+            </div>
           </div>
         </section>
 

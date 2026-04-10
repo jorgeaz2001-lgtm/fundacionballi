@@ -1,7 +1,7 @@
 .main {
   padding: 100px 0 60px;
   min-height: 70vh;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  background: #ffffff;
 }
 
 .container {
@@ -12,105 +12,66 @@
 /* Sección de Donación */
 .donateSection {
   text-align: center;
-  padding: 40px 0 60px;
+  padding: 60px 40px;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .donateTitle {
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: clamp(28px, 4vw, 40px);
   color: var(--color-primary);
   margin: 0 0 12px;
+  font-weight: 600;
 }
 
 .donateSubtitle {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--color-muted);
-  margin: 0 0 32px;
-  max-width: 500px;
+  margin: 0 0 40px;
+  max-width: 450px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.bankCard {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  border-radius: 20px;
-  padding: 32px;
-  color: white;
-  max-width: 480px;
-  margin: 0 auto 32px;
-  box-shadow: 0 10px 40px rgba(47, 95, 152, 0.2);
-}
-
-.bankName {
-  font-size: 24px;
-  font-weight: 700;
-  margin: 0 0 20px;
-  text-align: center;
-}
-
-.bankDetails {
-  display: grid;
-  gap: 12px;
-}
-
-.bankDetails p {
-  margin: 0;
-  font-size: 16px;
   line-height: 1.5;
-  word-break: break-all;
 }
 
-.bankDetails strong {
-  font-weight: 600;
-  opacity: 0.9;
-}
-
-/* Botones de contacto */
-.contactButtons {
-  display: flex;
+.bankInfo {
+  display: grid;
   gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-.whatsappButton,
-.emailButton {
-  display: inline-flex;
+.bankRow {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 999px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.bankRow:last-child {
+  border-bottom: none;
+}
+
+.bankLabel {
+  font-size: 14px;
+  color: var(--color-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bankValue {
   font-size: 16px;
+  color: var(--color-text);
   font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  min-height: 52px;
-}
-
-.whatsappButton {
-  background: #25d366;
-  color: white;
-}
-
-.whatsappButton:hover {
-  background: #1ea855;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
-}
-
-.emailButton {
-  background: var(--color-accent);
-  color: white;
-}
-
-.emailButton:hover {
-  background: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(47, 95, 152, 0.3);
+  text-align: right;
+  font-family: var(--font-sans);
+  letter-spacing: 0.5px;
 }
 
 /* Sección del formulario */
 .formSection {
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 /* Responsive */
@@ -120,43 +81,51 @@
   }
 
   .donateSection {
-    padding: 24px 0 40px;
+    padding: 40px 20px;
   }
 
   .donateTitle {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .donateSubtitle {
-    font-size: 16px;
-    margin-bottom: 24px;
-  }
-
-  .bankCard {
-    padding: 24px 20px;
-    border-radius: 16px;
-  }
-
-  .bankName {
-    font-size: 20px;
-  }
-
-  .bankDetails p {
-    font-size: 14px;
-  }
-
-  .contactButtons {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .whatsappButton,
-  .emailButton {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-    justify-content: center;
-    padding: 14px 20px;
     font-size: 15px;
+    margin-bottom: 32px;
+  }
+
+  .bankInfo {
+    gap: 0;
+  }
+
+  .bankRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 14px 0;
+  }
+
+  .bankLabel {
+    font-size: 12px;
+  }
+
+  .bankValue {
+    font-size: 15px;
+    text-align: left;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 380px) {
+  .donateSection {
+    padding: 32px 16px;
+  }
+
+  .donateTitle {
+    font-size: 24px;
+  }
+
+  .bankValue {
+    font-size: 14px;
+    word-break: break-all;
   }
 }
