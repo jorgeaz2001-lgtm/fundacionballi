@@ -13,7 +13,7 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Detectar scroll para sombra
+  // Detect scroll for shadow
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -22,12 +22,12 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Cerrar menú al cambiar de ruta
+  // Close menu when route changes
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
 
-  // Prevenir scroll cuando menú está abierto
+  // Prevent body scroll when menu open
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
@@ -39,53 +39,56 @@ export function Header() {
     };
   }, [menuOpen]);
 
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
-      <div className={styles.container}>
-        <Link className={styles.logo} href="/" onClick={() => setMenuOpen(false)}>
-          <Image
-            src="/images/logo.png"
-            alt="Fundación Valdez Balli"
-            width={180}
-            height={40}
-            className={styles.logoImage}
-            priority
-          />
-        </Link>
+    <>
+      <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
+        <div className={styles.container}>
+          <Link className={styles.logo} href="/" onClick={closeMenu}>
+            <Image
+              src="/images/logo.png"
+              alt="Fundación Valdez Balli"
+              width={160}
+              height={40}
+              className={styles.logoImage}
+              priority
+            />
+          </Link>
 
-        <button
-          type="button"
-          className={styles.menuToggle}
-          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? "✕" : "☰"}
-        </button>
+          <button
+            type="button"
+            className={styles.menuToggle}
+            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={menuOpen}
+            onClick={toggleMenu}
+          >
+            {menuOpen ? "✕" : "☰"}
+          </button>
 
-        <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
-          <div className={styles.navLinks}>
-            {siteConfig.nav.map((item) => (
-              <Link
-                key={item.href}
-                className={pathname === item.href ? styles.navActive : styles.navLink}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-          <div className={styles.navCta}>
-            <ButtonLink href={siteConfig.ctaHref} label={siteConfig.ctaLabel} />
-          </div>
-        </nav>
-      </div>
+          <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
+            <div className={styles.navLinks}>
+              {siteConfig.nav.map((item) => (
+                <Link
+                  key={item.href}
+                  className={pathname === item.href ? styles.navActive : styles.navLink}
+                  href={item.href}
+                  onClick={closeMenu}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            <div className={styles.navCta}>
+              <ButtonLink href={siteConfig.ctaHref} label={siteConfig.ctaLabel} />
+            </div>
+          </nav>
+        </div>
+      </header>
 
-      {/* Overlay para cerrar menú al hacer clic fuera */}
-      {menuOpen && (
-        <div className={styles.overlay} onClick={() => setMenuOpen(false)} />
-      )}
-    </header>
+      {/* Overlay */}
+      {menuOpen && <div className={styles.overlay} onClick={closeMenu} />}
+    </>
   );
 }
