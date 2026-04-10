@@ -1,10 +1,10 @@
 .hero {
   background: linear-gradient(120deg, #f5f7fb 0%, #e9eef9 100%);
-  padding: 86px 0 80px;
+  padding: 100px 0 80px;
 }
 
 .container {
-  width: min(1160px, 92vw);
+  width: min(1200px, 94vw);
   margin: 0 auto;
 }
 
@@ -12,18 +12,19 @@
   margin: 0;
   max-width: 780px;
   color: var(--color-primary);
-  font-size: clamp(36px, 5.1vw, 58px);
-  line-height: 1.08;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.1;
 }
 
 .hero p {
   margin: 20px 0 32px;
   max-width: 660px;
   color: var(--color-text);
-  font-size: clamp(18px, 2.2vw, 25px);
-  line-height: 1.35;
+  font-size: clamp(17px, 2vw, 24px);
+  line-height: 1.5;
 }
 
+/* Cinematic Hero (Video Background) */
 .heroCinematic {
   background: #ffffff;
   padding: 0 0 28px;
@@ -36,7 +37,7 @@
   margin: 0;
   border-radius: 0;
   overflow: hidden;
-  min-height: clamp(640px, 88svh, 920px);
+  min-height: clamp(500px, 85svh, 900px);
   background: #111827;
 }
 
@@ -53,7 +54,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0.26) 52%, rgba(0, 0, 0, 0.14) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%);
   opacity: calc(1 - var(--scroll-progress, 0) * 0.9);
   transition: opacity 0.22s linear;
 }
@@ -69,9 +70,9 @@
 .cinematicContent {
   position: absolute;
   left: 50%;
-  bottom: clamp(22px, 4vw, 52px);
+  bottom: clamp(40px, 6vw, 60px);
   transform: translateX(-50%);
-  width: min(910px, 90vw);
+  width: min(900px, 92vw);
   text-align: center;
   color: #ffffff;
   opacity: calc(1 - var(--scroll-progress, 0) * 1.15);
@@ -80,27 +81,30 @@
 }
 
 .cinematicContent h1 {
-  margin: 0;
+  margin: 0 auto;
   max-width: 100%;
   color: #ffffff;
-  font-size: clamp(38px, 6vw, 76px);
-  line-height: 1.07;
+  font-size: clamp(32px, 6vw, 72px);
+  line-height: 1.08;
   letter-spacing: -0.02em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .cinematicContent p {
-  margin: 14px auto 24px;
-  max-width: 780px;
-  color: rgba(255, 255, 255, 0.92);
-  font-size: clamp(17px, 2vw, 28px);
-  line-height: 1.35;
+  margin: 16px auto 28px;
+  max-width: 700px;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(16px, 2.2vw, 26px);
+  line-height: 1.45;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
 }
 
 .cinematicActions {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .heroButton {
@@ -109,26 +113,39 @@
   justify-content: center;
   min-height: 52px;
   border-radius: 999px;
-  padding: 0 24px;
+  padding: 0 28px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .heroButtonPrimary {
   background: #ffffff;
-  color: #0f172a;
+  color: var(--color-primary-dark);
+}
+
+.heroButtonPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .heroButtonSecondary {
-  background: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.2);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
 }
 
+.heroButtonSecondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Tablet and Mobile Styles */
 @media (max-width: 940px) {
   .hero {
-    padding-top: 72px;
+    padding: 90px 0 60px;
   }
 
   .heroCinematic {
@@ -137,11 +154,43 @@
 
   .cinematicFrame {
     border-radius: 0;
-    min-height: 560px;
+    min-height: 100svh;
+    min-height: 100vh;
+  }
+
+  .cinematicContent {
+    bottom: 80px;
+    padding: 0 20px;
+  }
+
+  .cinematicContent h1 {
+    font-size: clamp(28px, 8vw, 48px);
   }
 
   .cinematicActions {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+  }
+
+  .heroButton {
+    width: 100%;
+    max-width: 300px;
+    min-height: 56px;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 380px) {
+  .cinematicContent h1 {
+    font-size: 26px;
+  }
+
+  .cinematicContent p {
+    font-size: 15px;
+  }
+
+  .heroButton {
+    font-size: 15px;
+    padding: 0 24px;
   }
 }

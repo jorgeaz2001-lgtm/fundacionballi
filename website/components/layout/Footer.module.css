@@ -1,52 +1,55 @@
 .footer {
-  margin-top: 80px;
+  margin-top: 60px;
   padding: 0;
   color: #f8fafc;
   background:
-    linear-gradient(180deg, rgba(2, 8, 23, 0.74) 0%, rgba(2, 8, 23, 0.92) 100%),
+    linear-gradient(180deg, rgba(2, 8, 23, 0.8) 0%, rgba(2, 8, 23, 0.95) 100%),
     url("https://framerusercontent.com/images/lMLG6MAvI6V6XNIku3X2llo.png?width=1728&height=839");
   background-size: cover;
   background-position: center;
 }
 
 .container {
-  width: min(1160px, 92vw);
+  width: min(1200px, 94vw);
   margin: 0 auto;
-  padding: 92px 0 24px;
+  padding: 80px 0 32px;
 }
 
 .ctaPanel {
   width: min(520px, 100%);
-  padding: 8px 0 94px;
+  padding: 8px 0 70px;
 }
 
 .eyebrow {
-  margin: 0;
+  margin: 0 0 12px;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
 }
 
 .ctaPanel h2 {
   margin: 14px 0 0;
-  font-size: clamp(44px, 5vw, 70px);
-  line-height: 0.96;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: 1.05;
   color: #ffffff;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
   margin: 20px 0 0;
   max-width: 500px;
-  font-size: 18px;
-  line-height: 1.45;
-  color: rgba(226, 232, 240, 0.93);
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.55;
+  color: rgba(226, 232, 240, 0.95);
 }
 
 .actions {
   display: flex;
   gap: 12px;
   margin-top: 28px;
+  flex-wrap: wrap;
 }
 
 .primaryAction,
@@ -54,50 +57,57 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 11px 18px;
+  padding: 14px 24px;
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
-  border: 1px solid transparent;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  min-height: 48px;
 }
 
 .primaryAction {
   background: #ffffff;
-  color: #020617;
+  color: var(--color-primary-dark);
+}
+
+.primaryAction:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .secondaryAction {
-  background: rgba(15, 23, 42, 0.5);
+  background: rgba(255, 255, 255, 0.1);
   color: #f8fafc;
-  border-color: rgba(248, 250, 252, 0.38);
+  border-color: rgba(248, 250, 252, 0.4);
 }
 
-.primaryAction:hover,
 .secondaryAction:hover {
-  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(248, 250, 252, 0.6);
 }
 
 .bottomBar {
-  border-top: 1px solid rgba(248, 250, 252, 0.14);
-  padding-top: 18px;
+  border-top: 1px solid rgba(248, 250, 252, 0.15);
+  padding-top: 32px;
   display: grid;
-  gap: 14px;
+  gap: 24px;
 }
 
 .linkGroup {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 12px 24px;
   align-items: center;
 }
 
 .groupTitle {
   margin: 0;
-  width: 64px;
+  min-width: 100px;
   font-size: 14px;
   font-weight: 600;
-  color: rgba(226, 232, 240, 0.92);
+  color: rgba(226, 232, 240, 0.9);
 }
 
 .linkRow {
@@ -108,44 +118,100 @@
 
 .linkRow a {
   text-decoration: none;
-  color: rgba(248, 250, 252, 0.92);
-  font-size: 13px;
+  color: rgba(248, 250, 252, 0.85);
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.linkRow a:hover {
+  color: #ffffff;
 }
 
 .meta {
-  margin-top: 4px;
+  margin-top: 8px;
 }
 
 .copy,
 .address {
   margin: 0;
-  color: rgba(203, 213, 225, 0.9);
-  font-size: 12px;
-  line-height: 1.5;
+  color: rgba(203, 213, 225, 0.8);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .address {
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
-@media (max-width: 940px) {
+/* Tablet and Mobile Styles */
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 40px;
+  }
+
   .container {
-    padding: 64px 0 22px;
+    padding: 60px 0 28px;
   }
 
   .ctaPanel {
-    padding-bottom: 64px;
+    padding-bottom: 50px;
   }
 
-  .subtitle {
-    font-size: 16px;
+  .ctaPanel h2 {
+    font-size: clamp(28px, 8vw, 44px);
   }
 
   .actions {
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .primaryAction,
+  .secondaryAction {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .linkGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .groupTitle {
-    width: auto;
+    min-width: auto;
+    font-size: 13px;
+  }
+
+  .linkRow {
+    gap: 12px 20px;
+  }
+
+  .linkRow a {
+    font-size: 13px;
+  }
+
+  .bottomBar {
+    padding-top: 24px;
+    gap: 20px;
+  }
+
+  .meta {
+    text-align: center;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 380px) {
+  .container {
+    padding: 50px 0 24px;
+  }
+
+  .ctaPanel h2 {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 15px;
   }
 }
