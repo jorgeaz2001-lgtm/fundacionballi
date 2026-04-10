@@ -19,11 +19,19 @@ export const contactContent = {
     heading: "Información de contacto",
     email: "contacto@fundacionvaldezballi.org",
     location: "Monterrey, Nuevo León, México",
+    whatsapp: "+528112345678",
     social: [
       { label: "Facebook", href: "#" },
       { label: "Instagram", href: "#" },
       { label: "LinkedIn", href: "#" }
     ]
+  },
+  bankInfo: {
+    heading: "Datos bancarios para donaciones",
+    bank: "BBVA",
+    accountName: "FUNDACION VALDEZ BALLI AC",
+    accountNumber: "0124630084",
+    clabe: "012580001246300848"
   },
   panel: {
     heading: "Escríbenos",

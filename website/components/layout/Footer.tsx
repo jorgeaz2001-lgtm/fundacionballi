@@ -23,6 +23,16 @@ export function Footer() {
           </div>
         </div>
 
+        <div className={styles.bankInfo}>
+          <p className={styles.bankTitle}>Datos bancarios para donaciones</p>
+          <div className={styles.bankDetails}>
+            <p><strong>Banco:</strong> {siteConfig.bankInfo.bank}</p>
+            <p><strong>Cuenta:</strong> {siteConfig.bankInfo.accountNumber}</p>
+            <p><strong>CLABE:</strong> {siteConfig.bankInfo.clabe}</p>
+            <p><strong>Nombre:</strong> {siteConfig.bankInfo.accountName}</p>
+          </div>
+        </div>
+
         <div className={styles.bottomBar}>
           <div className={styles.linkGroup}>
             <p className={styles.groupTitle}>Páginas</p>
@@ -32,6 +42,18 @@ export function Footer() {
                   {item.label}
                 </Link>
               ))}
+            </div>
+          </div>
+
+          <div className={styles.linkGroup}>
+            <p className={styles.groupTitle}>Contacto</p>
+            <div className={styles.linkRow}>
+              <a href={`https://wa.me/${siteConfig.whatsapp.replace(/\+/g, '')}`} target="_blank" rel="noreferrer">
+                WhatsApp
+              </a>
+              <a href={`mailto:${siteConfig.footer.email}`}>
+                {siteConfig.footer.email}
+              </a>
             </div>
           </div>
 
