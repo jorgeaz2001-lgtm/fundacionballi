@@ -11,7 +11,7 @@ export const aboutContent = {
   intro: {
     heading: "Quiénes somos",
     body: "Fundación Valdez Balli, A.C. es una organización dedicada a combatir la discapacidad visual y la ceguera en la zona metropolitana de Monterrey y zonas vulnerables. Implementamos un modelo sostenible que previene, detecta y trata enfermedades visuales de manera oportuna.",
-    image: "/images/icono.png",
+    image: "/images/content/consultorio.png",
     imageAlt: "Fundación Valdez Balli"
   },
   industriesHeading: "Servicios que ofrecemos",
@@ -28,7 +28,7 @@ export const aboutContent = {
   geography: {
     heading: "Dónde operamos",
     body: "Actualmente enfocados en la zona metropolitana de Monterrey, Nuevo León, con planes de expansión a otras regiones del estado y el país mediante nuestro modelo replicable de Vision Centers.",
-    image: "https://www.rtsinternational.com/sites/default/files/2024-11/Map.png",
+    image: "/images/content/lentes.png",
     imageAlt: "Cobertura Fundación Valdez Balli"
   },
   teamHeading: "Nuestro Equipo",

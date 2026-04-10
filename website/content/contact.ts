@@ -24,5 +24,48 @@ export const contactContent = {
       { label: "Instagram", href: "#" },
       { label: "LinkedIn", href: "#" }
     ]
+  },
+  panel: {
+    heading: "Escríbenos",
+    bullets: [
+      "Información sobre servicios",
+      "Programar una cita",
+      "Hacer una donación",
+      "Ser voluntario",
+      "Alianzas y patrocinios"
+    ],
+    supportCopy: "¿Necesitas ayuda inmediata?",
+    supportLabel: "Llamar ahora",
+    supportHref: "tel:+528112345678"
+  },
+  form: {
+    firstNameLabel: "Nombre",
+    firstNamePlaceholder: "Tu nombre",
+    lastNameLabel: "Apellido",
+    lastNamePlaceholder: "Tu apellido",
+    emailLabel: "Correo electrónico",
+    emailPlaceholder: "tu@email.com",
+    companyLabel: "Asunto",
+    companyPlaceholder: "¿En qué podemos ayudarte?",
+    phoneLabel: "Teléfono",
+    phonePlaceholder: "(81) 1234-5678",
+    annualSalesLabel: "Tipo de consulta",
+    annualSalesOptions: [
+      "Información general",
+      "Programar cita",
+      "Donaciones",
+      "Voluntariado",
+      "Alianzas",
+      "Otro"
+    ],
+    sourceLabel: "¿Cómo nos conociste?",
+    sourceOptions: [
+      "Redes sociales",
+      "Búsqueda en Google",
+      "Recomendación",
+      "Evento",
+      "Otro"
+    ],
+    submitLabel: "Enviar mensaje"
   }
 };

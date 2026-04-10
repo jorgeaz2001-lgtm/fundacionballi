@@ -32,10 +32,53 @@ type ContactFormProps = {
 
 export function ContactForm({ panel, labels }: ContactFormProps) {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSent(true);
+    setSending(true);
+    setError("");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    
+    // Convertir FormData a objeto
+    const data: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      data[key] = value.toString();
+    });
+
+    try {
+      // =====================================================
+      // CONFIGURACIÓN: Reemplaza con tu endpoint de Formspree
+      // 1. Ve a https://formspree.io/
+      // 2. Crea una cuenta y un nuevo formulario
+      // 3. Copia tu endpoint (ej: https://formspree.io/f/xnqkvnyp)
+      // 4. Reemplaza la URL de abajo
+      // =====================================================
+      const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnqkvnyp"; // <-- REEMPLAZA ESTO
+      
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSent(true);
+        form.reset();
+      } else {
+        setError("Hubo un error al enviar el mensaje. Por favor intenta de nuevo.");
+      }
+    } catch (err) {
+      setError("Error de conexión. Por favor verifica tu conexión a internet.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -72,12 +115,12 @@ export function ContactForm({ panel, labels }: ContactFormProps) {
 
           <label>
             {labels.companyLabel}
-            <input required type="text" name="companyName" placeholder={labels.companyPlaceholder} />
+            <input required type="text" name="asunto" placeholder={labels.companyPlaceholder} />
           </label>
 
           <label>
             {labels.annualSalesLabel}
-            <select required name="annualSales" defaultValue="">
+            <select required name="tipoConsulta" defaultValue="">
               <option value="" disabled>
                 Selecciona...
               </option>
@@ -96,7 +139,7 @@ export function ContactForm({ panel, labels }: ContactFormProps) {
 
           <label>
             {labels.sourceLabel}
-            <select required name="source" defaultValue="">
+            <select required name="comoNosConociste" defaultValue="">
               <option value="" disabled>
                 Selecciona...
               </option>
@@ -108,10 +151,25 @@ export function ContactForm({ panel, labels }: ContactFormProps) {
             </select>
           </label>
 
-          <button type="submit" className={styles.submitButton}>
-            {labels.submitLabel}
+          <button 
+            type="submit" 
+            className={styles.submitButton}
+            disabled={sending}
+          >
+            {sending ? "Enviando..." : labels.submitLabel}
           </button>
-          {sent ? <p className={styles.success}>Mensaje recibido. Te contactaremos en breve.</p> : null}
+          
+          {sent && (
+            <p className={styles.success}>
+              ✅ Mensaje enviado correctamente. Te contactaremos en breve.
+            </p>
+          )}
+          
+          {error && (
+            <p className={styles.error}>
+              ❌ {error}
+            </p>
+          )}
         </form>
       </div>
     </section>

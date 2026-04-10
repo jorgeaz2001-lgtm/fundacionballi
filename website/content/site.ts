@@ -26,8 +26,8 @@ export const siteConfig = {
   footer: {
     address: "Monterrey, Nuevo León, México",
     legalLinks: [
-      { label: "Aviso de Privacidad", href: "#" },
-      { label: "Términos y Condiciones", href: "#" }
+      { label: "Aviso de Privacidad", href: "/privacidad" },
+      { label: "Términos y Condiciones", href: "/terminos" }
     ],
     partnerLinks: [
       { label: "Atención a Pacientes", href: "mailto:contacto@fundacionvaldezballi.org" },

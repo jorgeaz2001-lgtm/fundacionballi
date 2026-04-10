@@ -9,14 +9,14 @@
 }
 
 :root {
-  /* Fundación Valdez Balli Brand Colors */
-  --color-primary: #1e3a5f;
-  --color-primary-dark: #152a45;
-  --color-accent: #4a90c6;
-  --color-accent-light: #6bb3e0;
-  --color-text: #1e3a5f;
-  --color-muted: #5a6a7a;
-  --color-border: #c8dce8;
+  /* Fundación Valdez Balli Brand Colors - Manual de Identidad */
+  --color-primary: #2f5f98;
+  --color-primary-dark: #1f2f41;
+  --color-accent: #7cb3e1;
+  --color-accent-light: #d7eeff;
+  --color-text: #332d59;
+  --color-muted: #4f5560;
+  --color-border: #d7eeff;
   --color-white: #ffffff;
   --color-light-bg: #f5f9fc;
   --font-sans: "Inter", "Segoe UI", Arial, sans-serif;

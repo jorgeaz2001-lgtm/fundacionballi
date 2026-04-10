@@ -12,61 +12,58 @@ export const servicesContent = {
     heading: "Atención oftalmológica accesible para todos",
     body: "Nuestros servicios están diseñados para llegar a las comunidades más vulnerables, garantizando acceso a atención de calidad sin distinción de capacidad económica."
   },
-  benefits: [
+  process: {
+    heading: "Nuestro Proceso",
+    body: "Un flujo de atención diseñado para garantizar acceso, diagnóstico y tratamiento efectivo.",
+    steps: [
+      { icon: "/images/icono.png", title: "Registro", body: "El paciente se registra en nuestro sistema y recibe una evaluación inicial." },
+      { icon: "/images/icono.png", title: "Evaluación", body: "Evaluación completa de su salud visual por profesionales capacitados." },
+      { icon: "/images/icono.png", title: "Diagnóstico", body: "Exámenes especializados para detectar cualquier problema ocular." },
+      { icon: "/images/icono.png", title: "Tratamiento", body: "Prescripción de lentes, medicamentos o referencia para cirugía." },
+      { icon: "/images/icono.png", title: "Seguimiento", body: "Control periódico para asegurar la efectividad del tratamiento." }
+    ]
+  },
+  differenceHeading: "¿Por qué elegirnos?",
+  differenceItems: [
     {
       title: "Consulta Oftalmológica",
-      description:
-        "Evaluación completa de la salud visual por profesionales capacitados, con posibilidad de consultas remotas mediante telemedicina para casos complejos."
+      body: "Evaluación completa de la salud visual por profesionales capacitados, con posibilidad de consultas remotas mediante telemedicina para casos complejos."
     },
     {
       title: "Exámenes de Vista",
-      description:
-        "Refractometría y detección de errores de refracción que afectan a millones de mexicanos. Prescripción precisa de lentes correctivos."
+      body: "Refractometría y detección de errores de refracción que afectan a millones de mexicanos. Prescripción precisa de lentes correctivos."
     },
     {
       title: "Detección de Enfermedades",
-      description:
-        "Identificación temprana de cataratas, glaucoma, retinopatía diabética y otras patologías oculares que pueden causar ceguera si no se tratan."
+      body: "Identificación temprana de cataratas, glaucoma, retinopatía diabética y otras patologías oculares que pueden causar ceguera si no se tratan."
     },
     {
       title: "Programa de Cirugías",
-      description:
-        "Expediciones médico-quirúrgicas vinculadas con hospitales base para garantizar procedimientos especializados, especialmente cirugías de cataratas."
+      body: "Expediciones médico-quirúrgicas vinculadas con hospitales base para garantizar procedimientos especializados, especialmente cirugías de cataratas."
     },
     {
       title: "Dispensación de Lentes",
-      description:
-        "Provisión de lentes y medicamentos a bajo costo, facilitando el acceso de los pacientes a estos recursos esenciales para su visión."
+      body: "Provisión de lentes y medicamentos a bajo costo, facilitando el acceso de los pacientes a estos recursos esenciales para su visión."
     },
     {
       title: "Seguimiento Continuo",
-      description:
-        "Monitoreo de pacientes con enfermedades visuales crónicas, asegurando que reciban atención continua y oportuna a lo largo del tiempo."
+      body: "Monitoreo de pacientes con enfermedades visuales crónicas, asegurando que reciban atención continua y oportuna a lo largo del tiempo."
     }
   ],
-  processSteps: [
-    {
-      step: 1,
-      title: "Registro y Evaluación",
-      description: "El paciente se registra en nuestro sistema y recibe una evaluación inicial de su salud visual."
-    },
-    {
-      step: 2,
-      title: "Diagnóstico",
-      description: "Realizamos exámenes completos para detectar cualquier problema visual o patología ocular."
-    },
-    {
-      step: 3,
-      title: "Tratamiento",
-      description: "Prescripción de lentes, medicamentos o referencia para cirugía según las necesidades del paciente."
-    },
-    {
-      step: 4,
-      title: "Seguimiento",
-      description: "Control periódico para asegurar la efectividad del tratamiento y detectar cualquier cambio."
-    }
-  ],
-  faq: [
+  benefits: {
+    image: "/images/content/examen-paciente.png",
+    imageAlt: "Fundación Valdez Balli",
+    heading: "Beneficios de nuestro modelo",
+    points: [
+      "Acceso a atención oftalmológica de calidad",
+      "Precios accesibles y subsidios para quienes lo necesitan",
+      "Tecnología de vanguardia",
+      "Equipo médico altamente capacitado",
+      "Cobertura en zonas urbanas y rurales",
+      "Modelo sostenible y escalable"
+    ]
+  },
+  faqs: [
     {
       question: "¿Cuánto cuesta una consulta?",
       answer:

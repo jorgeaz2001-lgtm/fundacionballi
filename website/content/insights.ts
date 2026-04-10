@@ -8,6 +8,12 @@ export const insightsContent = {
     heading: "La situación de la salud visual en México",
     body: "México enfrenta una crisis de salud visual. Con 11.01 millones de casos de discapacidad visual y ceguera, el 80% de los cuales son prevenibles, existe una urgente necesidad de acción."
   },
+  featured: {
+    title: "El 80% de la ceguera en México es evitable",
+    excerpt:
+      "Según la OMS, la mayoría de los casos de pérdida de visión pueden prevenirse o tratarse con acceso adecuado a servicios oftalmológicos. Conoce las principales causas y cómo podemos cambiar esta realidad.",
+    date: "2024"
+  },
   posts: [
     {
       title: "El 80% de la ceguera en México es evitable",

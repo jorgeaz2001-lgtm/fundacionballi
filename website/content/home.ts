@@ -10,7 +10,7 @@ export const homeContent = {
     secondaryCtaLabel: "Conoce Más",
     secondaryCtaHref: "/about",
     videoUrl: "https://cdn.prod.website-files.com/68d7862ff86a6de94b452b46%2F68d7899c6f5fc3c0d8058a21_Hero%20Video-transcode.mp4",
-    videoPoster: "/images/icono.png"
+    videoPoster: "/images/content/examen-nino.png"
   },
   intro: {
     heading: "Más de 11 millones de mexicanos viven con discapacidad visual",
@@ -44,7 +44,7 @@ export const homeContent = {
         title: "Consultorios permanentes en comunidades",
         description: "Equipados con tecnología básica para atención primaria oftalmológica, operados por profesionales de salud visual con apoyo de telemedicina.",
         mediaType: "image",
-        mediaUrl: "https://www.rtsinternational.com/sites/default/files/2025-01/laptop-screen.png",
+        mediaUrl: "/images/content/consultorio.png",
         metric: "Atención de lunes a sábado con horarios extendidos"
       },
       {
@@ -52,7 +52,7 @@ export const homeContent = {
         title: "Unidades médicas móviles",
         description: "Llevamos la atención oftalmológica a comunidades de difícil acceso mediante caravanas equipadas para detección y referencia.",
         mediaType: "image",
-        mediaUrl: "https://www.rtsinternational.com/sites/default/files/2024-11/Map.png",
+        mediaUrl: "/images/content/caravana-rural.png",
         metric: "Cobertura en zonas rurales y marginadas"
       },
       {
@@ -60,7 +60,7 @@ export const homeContent = {
         title: "Consultas remotas con especialistas",
         description: "Tecnología de diagnóstico remoto para facilitar la detección temprana y el seguimiento de pacientes en áreas remotas.",
         mediaType: "image",
-        mediaUrl: "https://www.rtsinternational.com/sites/default/files/2025-01/image%201.jpg",
+        mediaUrl: "/images/content/caravana-urbana.png",
         metric: "Conexión con oftalmólogos especializados"
       },
       {
@@ -68,7 +68,7 @@ export const homeContent = {
         title: "Expediciones médico-quirúrgicas",
         description: "Programas vinculados con hospitales base para garantizar procedimientos quirúrgicos y tratamientos especializados.",
         mediaType: "image",
-        mediaUrl: "https://www.rtsinternational.com/sites/default/files/2025-01/laptop-screen.png",
+        mediaUrl: "/images/content/consultorio.png",
         metric: "Cirugías de cataratas y otros procedimientos"
       },
       {
@@ -76,7 +76,7 @@ export const homeContent = {
         title: "Capacitación de personal de salud",
         description: "Programas de formación para oftalmólogos, enfermeras especializadas, optometristas y técnicos en salud visual.",
         mediaType: "image",
-        mediaUrl: "https://www.rtsinternational.com/sites/default/files/2024-11/Map.png",
+        mediaUrl: "/images/content/equipo-microscopio.png",
         metric: "Profesionalización del sector y empleo local"
       },
       {
@@ -84,7 +84,7 @@ export const homeContent = {
         title: "Subsidios cruzados para acceso universal",
         description: "Los pacientes de mayores ingresos financian la atención de quienes no pueden costearla, garantizando acceso para todos.",
         mediaType: "image",
-        mediaUrl: "https://www.rtsinternational.com/sites/default/files/2025-01/image%201.jpg",
+        mediaUrl: "/images/content/caravana-urbana.png",
         metric: "Sostenibilidad financiera a largo plazo"
       }
     ]
@@ -99,31 +99,31 @@ export const homeContent = {
     {
       title: "Detección Temprana",
       body: "Identificamos cataratas, glaucoma, retinopatía diabética y otros padecimientos en etapas iniciales.",
-      imageUrl: "https://framerusercontent.com/images/HlLNHFp92mBs48AlJPbjnCfJs.jpg"
+      imageUrl: "/images/content/ojo-catarata.png"
     },
     {
       title: "Prescripción de Lentes",
       body: "Exámenes de la vista y dispensación de lentes a precios accesibles para quienes lo necesitan.",
-      imageUrl: "https://framerusercontent.com/images/xm2kX5TxyDqX3dK52e6gsO890s.jpg"
+      imageUrl: "/images/content/lentes.png"
     },
     {
       title: "Caravanas de Salud",
       body: "Llevamos atención oftalmológica directamente a las comunidades más alejadas y vulnerables.",
-      imageUrl: "https://framerusercontent.com/images/LW10f0HNq16YWPNqdCABHPmxeg.jpg"
+      imageUrl: "/images/content/cirugia.png"
     },
     {
       title: "Cirugías de Cataratas",
       body: "Programas quirúrgicos que restauran la visión y mejoran la calidad de vida de los pacientes.",
-      imageUrl: "https://framerusercontent.com/images/BhloAVtfH51EsFRx4LnZwv35zIw.jpg"
+      imageUrl: "/images/content/ojo-sano.png"
     },
     {
       title: "Educación Comunitaria",
       body: "Campañas de sensibilización sobre prevención de enfermedades visuales y buenas prácticas de cuidado ocular.",
-      imageUrl: "https://framerusercontent.com/images/LW10f0HNq16YWPNqdCABHPmxeg.jpg"
+      imageUrl: "/images/content/caravana-rural.png"
     }
   ],
   dashboard: {
-    image: "https://www.rtsinternational.com/sites/default/files/2025-01/laptop-screen.png",
+    image: "/images/content/educacion.png",
     imageAlt: "Fundación Valdez Balli",
     heading: "Nuestro proceso de atención en 4 pasos",
     body: "Un modelo claro para brindar atención oftalmológica accesible:",
